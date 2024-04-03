@@ -1,7 +1,7 @@
 <script>
   export default {
     props: {
-   
+      immagine_copertina: String,
       titolo: String,
       titolo_originale: String,
       lingua: String,
@@ -17,12 +17,12 @@
 
   <section>
     <div class="col">
-        <div class="flip-card">
+        <div class="flip-card  py-2 ">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="" alt="Avatar" style="width:200px;height:300px;">
+              <img src="" alt="Titolo" style="width:250px;height:350px;">
             </div>
-            <div class="flip-card-back">
+            <div class="flip-card-back p-2">
               <p><strong>Titolo: </strong>{{ titolo }}</p>
               <p><strong>Titolo originale: </strong>{{ titolo_originale }}</p>
               <p><strong>Lingua: </strong>{{ lingua }}</p>

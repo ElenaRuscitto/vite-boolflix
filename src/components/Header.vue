@@ -23,7 +23,7 @@ export default {
 
 <template>
   <header>
-  <div class="container d-flex justify-content-between  ">
+  <div class="container d-flex justify-content-between">
     <div>
       <h1>BOOLFLIX</h1>
     </div>
@@ -50,15 +50,19 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 header {
-  background-color: black;
-  color: red;
+  background-color: $color-black;
+  color: $color-red;
  
   input {
     margin: 10px;
+   
   }
   .btn {
     height: 40px;
     margin-top: 10px ;
+    background-color: $color-red !important;
+    color: $color-black;
+    
   }
 }
 

@@ -23,7 +23,7 @@ export default {
     <div>
         <h2>Films</h2>
     </div>
-    <div class="row row-cols-6 ">
+    <div class="row row-cols-5 ">
      
       <Movies v-for="element in store.toMovies" 
       :key="element.id"
@@ -40,7 +40,7 @@ export default {
     <div>
         <h2>Serie TV</h2>
     </div>
-    <div class="row row-cols-6 ">
+    <div class="row row-cols-5 ">
      
       <Series />
     </div>
