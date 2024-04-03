@@ -1,8 +1,7 @@
 <script>
   export default {
     props: {
-      image: String,
-      images: String,
+   
       titolo: String,
       titolo_originale: String,
       lingua: String,
@@ -21,7 +20,7 @@
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="" alt="Avatar" style="width:300px;height:300px;">
+              <img src="" alt="Avatar" style="width:200px;height:300px;">
             </div>
             <div class="flip-card-back">
               <p><strong>Titolo: </strong>{{ titolo }}</p>

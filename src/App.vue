@@ -49,7 +49,7 @@ export default {
 
 
 <template>
-  <Header />
+  <Header @reserchInput="getApi" />
   <Main />
   <Footer />
 

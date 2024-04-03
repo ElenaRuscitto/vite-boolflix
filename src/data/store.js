@@ -8,7 +8,7 @@ export const store = reactive ( {
   toSeries: [],
     // per la ricerca input
     queryParams: {
-      query: 'matrix',
+      query: '',
       
     },
 

@@ -4,15 +4,17 @@ import {store} from '../data/store';
 export default {
   data(){
       return {
-        store,
-        query: '',
+       
+        reserchInput: ''
       }
   },
   methods: {
     toSearch () {
       store.queryParams= {
-        query: store.percercare
-      }
+        query: this.reserchInput
+      },
+      this.reserchInput= '',
+      this.$emit ('reserchInput')
     }
   }
 }
@@ -27,10 +29,11 @@ export default {
     </div>
     <div class="d-flex">
       <input 
-      v-model.trim="percercare"
+      v-model.trim="reserchInput"
       @keyup.enter="toSearch()" 
       type="text" 
-      class="form-control w-100 ">
+      class="form-control w-100 "
+      placeholder="Fai la tua ricerca">
 
       <button
       @click="toSearch()"
