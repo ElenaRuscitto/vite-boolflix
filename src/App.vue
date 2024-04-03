@@ -24,9 +24,16 @@ export default {
         axios.get(this.store.apiUrl, {
           params: this.store.queryParams
         })
+
         .then(response => {
           console.log(response.data.results);
           console.log(response);
+          //  associo l'array toMovies 
+          store.toMovies = response.data.results;
+        })
+
+        .catch (error => {
+          console.log(error);
         })
       }
     },

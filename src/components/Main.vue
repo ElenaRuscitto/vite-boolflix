@@ -20,8 +20,11 @@ export default {
 
 <template>
   <div class="container">
-    <div class="row">
-      <Movies />
+    <div class="row row-cols-6 ">
+      <div>
+        <h2>Films</h2>
+      </div>
+      <Movies v-for="element in store.toMovies" />
       <Series />
     </div>
    
@@ -33,5 +36,7 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/partials/general' as *;
 @use '../assets/scss/partials/variables' as *;
+
+
 
 </style>
