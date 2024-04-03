@@ -6,7 +6,7 @@
 
 <template>
   <div>
-    <h2>Serie TV</h2>
+    <h2>card</h2>
   </div>
 </template>
 
