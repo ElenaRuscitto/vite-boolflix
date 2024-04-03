@@ -5,22 +5,37 @@ export default {
   data(){
       return {
         store,
-       
+        query: '',
       }
   },
+  methods: {
+    toSearch () {
+      store.queryParams= {
+        query: store.percercare
+      }
+    }
+  }
 }
 </script>
 
 
 <template>
   <header>
-  <div class="container d-flex justify-content-between">
+  <div class="container d-flex justify-content-between  ">
     <div>
       <h1>BOOLFLIX</h1>
     </div>
     <div class="d-flex">
-      <input type="text" class="form-control w-100 ">
-      <button class="btn btn-danger">Cerca</button>
+      <input 
+      v-model.trim="percercare"
+      @keyup.enter="toSearch()" 
+      type="text" 
+      class="form-control w-100 ">
+
+      <button
+      @click="toSearch()"
+       class="btn btn-danger"
+      >Cerca</button>
     </div>
   </div>
   </header>
@@ -34,7 +49,7 @@ export default {
 header {
   background-color: black;
   color: red;
-  line-height: 70px;
+ 
   input {
     margin: 10px;
   }

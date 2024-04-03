@@ -21,10 +21,12 @@ export default {
     },
     methods:{
       getApi(){
-        axios.get(this.store.apiUrl)
+        axios.get(this.store.apiUrl, {
+          params: this.store.queryParams
+        })
         .then(response => {
           console.log(response.data.results);
-
+          console.log(response);
         })
       }
     },
