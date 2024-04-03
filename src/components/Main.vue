@@ -1,7 +1,13 @@
 <script>
 import {store} from '../data/store';
+import Movies from './partials/Movies.vue';
+import Series from './partials/Series.vue';
 
 export default {
+    components: {
+      Movies,
+      Series
+    },
   
     data(){
       return {
@@ -13,8 +19,12 @@ export default {
 
 
 <template>
-  <div>
-    Main
+  <div class="container">
+    <div class="row">
+      <Movies />
+      <Series />
+    </div>
+   
   </div>
   
 </template>
