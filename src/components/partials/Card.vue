@@ -12,7 +12,7 @@
 
     methods: {
       voted() {
-        return Math.round (cardObject.vote_average / 2)
+        return Math.ceil (this.cardObject.vote_average / 2)
       }
       
     }
@@ -54,8 +54,8 @@
               </p>
               <p>
                 <strong>Voto: </strong>
-                <span v-for="star in 5"><i class="fa-regular fa-star"></i></span>
-                
+                <span v-for="star in voted()" :key="star"><i class="fa-solid fa-star star"></i></span>                
+                <span v-for="star in (5 - voted())" :key="star"><i class="fa-regular fa-star"></i></span> {{ cardObject.vote_average}}
               </p>
               <p><strong>Trama: </strong>{{ cardObject.overview }}</p>
             </div>
@@ -79,5 +79,9 @@
   .copertina {
     width: 100%;
     height: 100%;
+  }
+
+  .star {
+    color: gold;
   }
 </style>
