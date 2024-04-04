@@ -1,12 +1,7 @@
 <script>
   export default {
     props: {
-      immagine_copertina: String,
-      titolo: String,
-      titolo_originale: String,
-      lingua: String,
-      voto: Number,
-      trama: String
+      cardObject: Object
     }
 
   }
@@ -23,11 +18,11 @@
               <img src="" alt="Titolo" style="width:250px;height:350px;">
             </div>
             <div class="flip-card-back p-2">
-              <p><strong>Titolo: </strong>{{ titolo }}</p>
-              <p><strong>Titolo originale: </strong>{{ titolo_originale }}</p>
-              <p><strong>Lingua: </strong>{{ lingua }}</p>
-              <p><strong>Voto: </strong>{{ voto }}</p>
-              <p><strong>Trama: </strong>{{ trama }}</p>
+              <p><strong>Titolo: </strong>{{ cardObject.title ||  cardObject.name}}</p>
+              <p><strong>Titolo originale: </strong>{{ cardObject.original_title ||  cardObject.original_name}}</p>
+              <p><strong>Lingua: </strong>{{ cardObject.original_language }}</p>
+              <p><strong>Voto: </strong>{{ cardObject.vote_average }}</p>
+              <p><strong>Trama: </strong>{{ cardObject.overview }}</p>
             </div>
           </div>
         </div>

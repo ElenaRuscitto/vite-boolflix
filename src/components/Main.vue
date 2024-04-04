@@ -1,17 +1,26 @@
 <script>
 import {store} from '../data/store';
-import Movies from './partials/Movies.vue';
-import Series from './partials/Series.vue';
+import Card from './partials/Card.vue';
 
 export default {
     components: {
-      Movies,
-      Series
+      Card
+     
+    },
+
+    props: {
+      type: String
     },
   
     data(){
       return {
         store,
+      }
+    },
+
+    computed: {
+      title() {
+        return this.type === 'movie' ? ' Film' : 'Serie TV'
       }
     }
   }
@@ -21,29 +30,17 @@ export default {
 <template>
   <div class="container">
     <div>
-        <h2>Films</h2>
+        <h2>{{ title }}</h2>
     </div>
     <div class="row row-cols-5 ">
      
-      <Movies v-for="element in store.toMovies" 
+      <Card v-for="element in store[type]" 
       :key="element.id"
-      :image="backdrop_path"
-      :images="poster_path"
-      :titolo="element.title"
-      :titolo_originale="element.original_title"
-      :lingua="element.original_title"
-      :voto="element.vote_average"
-      :trama="element.overview"/>
+      :cardObject="element"/>
      
     </div>
 
-    <div>
-        <h2>Serie TV</h2>
-    </div>
-    <div class="row row-cols-5 ">
-     
-      <Series />
-    </div>
+    
    
   </div>
   

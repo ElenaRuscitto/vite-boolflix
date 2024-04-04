@@ -4,7 +4,6 @@
   background-color: transparent;
   width: 250px;
   height: 350px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   &:hover .flip-card-inner {
   transform: rotateY(180deg);
