@@ -5,13 +5,15 @@
     },
     data (){
       return {
-        isPosted: true
+        isPoster: true
       }
       
     },
 
     methods: {
-      
+      voted() {
+        return Math.round (cardObject.vote_average / 2)
+      }
       
     }
 
@@ -27,8 +29,8 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <img  
-              v-if="isPosted"  
-              @error="isPosted = false"           
+              v-if="isPoster"  
+              @error="isPoster = false"           
               :src="`https://image.tmdb.org/t/p/w342/${cardObject.poster_path}`" 
               :alt="cardObject.name || cardObject.original_title" 
               class="copertina">
@@ -50,7 +52,11 @@
 
                 
               </p>
-              <p><strong>Voto: </strong>{{ cardObject.vote_average }}</p>
+              <p>
+                <strong>Voto: </strong>
+                <span v-for="star in 5"><i class="fa-regular fa-star"></i></span>
+                
+              </p>
               <p><strong>Trama: </strong>{{ cardObject.overview }}</p>
             </div>
           </div>
@@ -73,6 +79,5 @@
   .copertina {
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
 </style>
