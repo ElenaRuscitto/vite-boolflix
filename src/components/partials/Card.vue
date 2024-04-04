@@ -5,12 +5,17 @@
     },
     data (){
       return {
+        isFlag: true,
         isPoster: true
       }
       
     },
 
     methods: {
+      getImage (image) {
+       return new URL (`../../assets/img/${image}.png`  , import.meta.url).href
+      },
+
       voted() {
         return Math.ceil (this.cardObject.vote_average / 2)
       }
@@ -43,19 +48,36 @@
             <div class="flip-card-back p-2">
               <h6><strong>Titolo: </strong>{{ cardObject.title ||  cardObject.name}}</h6>
               <p><strong>Titolo originale: </strong>{{ cardObject.original_title ||  cardObject.original_name}}</p>
-              <p>
+              <!-- bandiera -->
+              <p v-if="isFlag">
                 <strong>Lingua: </strong>
                 <img 
+                :src="getImage(cardObject.original_language)" 
+                :alt="cardObject.original_language"
+                @error="isFlag = false" 
+                class="bandiera"
+                >
+              </p>
+                
+                <!-- <img 
                 :src="`../../../public/img/${cardObject.original_language}.png`" 
                 :alt="cardObject.original_language"
-                class="bandiera">
-
+                class="bandiera"> -->                
+              
+              <p v-else><strong>Lingua: </strong> {{cardObject.original_language}}</p>
                 
-              </p>
-              <p>
-                <strong>Voto: </strong>
-                <span v-for="star in voted()" :key="star"><i class="fa-solid fa-star star"></i></span>                
-                <span v-for="star in (5 - voted())" :key="star"><i class="fa-regular fa-star"></i></span> {{ cardObject.vote_average}}
+              <p><strong>Voto: </strong>
+                <span 
+                v-for="star in voted()" 
+                :key="star">
+                  <i class="fa-solid fa-star star"></i>
+                </span> 
+
+                <span 
+                v-for="star in (5 - voted())" 
+                :key="star">
+                  <i class="fa-regular fa-star"></i>
+                </span> &#10098; {{ cardObject.vote_average}} &#10099;
               </p>
               <p><strong>Trama: </strong>{{ cardObject.overview }}</p>
             </div>

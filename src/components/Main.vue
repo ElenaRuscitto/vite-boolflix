@@ -32,7 +32,7 @@ export default {
     <div>
         <h2>{{ title }}</h2>
     </div>
-    <div class="row row-cols-4 ">
+    <div class="row row-cols-5 ">
      
       <Card v-for="element in store[type]" 
       :key="element.id"
