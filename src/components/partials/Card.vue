@@ -2,6 +2,11 @@
   export default {
     props: {
       cardObject: Object
+    },
+
+    methods: {
+
+      
     }
 
   }
@@ -20,7 +25,12 @@
             <div class="flip-card-back p-2">
               <p><strong>Titolo: </strong>{{ cardObject.title ||  cardObject.name}}</p>
               <p><strong>Titolo originale: </strong>{{ cardObject.original_title ||  cardObject.original_name}}</p>
-              <p><strong>Lingua: </strong>{{ cardObject.original_language }}</p>
+              <p>
+                <strong>Lingua: </strong>
+                <img 
+                :src="`../../../public/img/${cardObject.original_language}.png`" 
+                :alt="cardObject.original_language">
+              </p>
               <p><strong>Voto: </strong>{{ cardObject.vote_average }}</p>
               <p><strong>Trama: </strong>{{ cardObject.overview }}</p>
             </div>
@@ -36,4 +46,8 @@
 
 <style lang="scss" scoped>
   @use '../../assets/scss/partials/general';
+
+  img {
+    width: 30px;
+  }
 </style>
