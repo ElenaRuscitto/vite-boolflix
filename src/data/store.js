@@ -11,6 +11,4 @@ export const store = reactive ( {
   movie: [],
   // array per la ricerca delle serie
   tv: [],
-   
-
 })
