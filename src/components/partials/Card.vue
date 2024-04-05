@@ -52,7 +52,7 @@
             </div>
             <!-- /immagine di copertina -->
 
-            <div class="flip-card-back p-2">
+            <div class="flip-card-back p-1">
               <h6><strong>Titolo: </strong>{{ cardObject.title ||  cardObject.name}}</h6>
               <p><strong>Titolo originale: </strong>{{ cardObject.original_title ||  cardObject.original_name}}</p>
 

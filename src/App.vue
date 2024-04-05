@@ -53,8 +53,8 @@ export default {
 
 <template>
   <Header @toSearch="toSearch" />
-  <Main type="movie" v-if="store.movie.length > 0"/>
-  <Main type="tv" v-if="store.tv.length > 0"/>
+  <Main type="movie" v-if="store.movie.length > 0" class="my-3"/>
+  <Main type="tv" v-if="store.tv.length> 0" class="my-5"/>
 
 </template>
 
