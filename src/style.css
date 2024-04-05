@@ -2,3 +2,17 @@ body {
   background-color: #1f1f1f;
   color: white;
 }
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(69, 69, 69, .3) ;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(117, 116, 116);
+  border-radius: 10px;
+}

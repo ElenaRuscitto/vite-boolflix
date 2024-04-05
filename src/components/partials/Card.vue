@@ -5,17 +5,20 @@
     },
     data (){
       return {
+        // bandiera
         isFlag: true,
+        // copertina
         isPoster: true
       }
       
     },
 
     methods: {
+      // bandiera
       getImage (image) {
        return new URL (`../../assets/img/${image}.png`  , import.meta.url).href
       },
-
+      // stelline
       voted() {
         return Math.ceil (this.cardObject.vote_average / 2)
       }
@@ -33,6 +36,8 @@
         <div class="flip-card  py-2 ">
           <div class="flip-card-inner">
             <div class="flip-card-front">
+
+              <!-- immagine di copertina -->
               <img  
               v-if="isPoster"  
               @error="isPoster = false"           
@@ -45,9 +50,12 @@
               :alt="cardObject.name || cardObject.original_title"             
               class="copertina">
             </div>
+            <!-- /immagine di copertina -->
+
             <div class="flip-card-back p-2">
               <h6><strong>Titolo: </strong>{{ cardObject.title ||  cardObject.name}}</h6>
               <p><strong>Titolo originale: </strong>{{ cardObject.original_title ||  cardObject.original_name}}</p>
+
               <!-- bandiera -->
               <p v-if="isFlag">
                 <strong>Lingua: </strong>
@@ -65,7 +73,9 @@
                 class="bandiera"> -->                
               
               <p v-else><strong>Lingua: </strong> {{cardObject.original_language}}</p>
-                
+              <!-- /bandiera -->
+
+              <!-- voto - stelline -->
               <p><strong>Voto: </strong>
                 <span 
                 v-for="star in voted()" 
@@ -79,6 +89,9 @@
                   <i class="fa-regular fa-star"></i>
                 </span> &#10098; {{ cardObject.vote_average}} &#10099;
               </p>
+              <!-- /voto - stelline -->
+
+              <!-- trama -->
               <p><strong>Trama: </strong>{{ cardObject.overview }}</p>
             </div>
           </div>
