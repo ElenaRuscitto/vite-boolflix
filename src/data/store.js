@@ -11,4 +11,15 @@ export const store = reactive ( {
   movie: [],
   // array per la ricerca delle serie
   tv: [],
+
+  // SWIPER
+  apiUrlPop: "https://api.themoviedb.org/3/trending/all/day?language=it-IT",
+  
+  apiParamsPop: {
+    api_key: '4f4b297cb7d657cef5006f738fd4ef31'
+  },
+
+  // array per i più popolari
+  popArray: [],
+
 })

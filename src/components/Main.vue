@@ -6,12 +6,13 @@ import Swiper from './partials/Swiper.vue';
 
 export default {
     components: {
-      Card
-         
+      Card,
+      Swiper
     },
 
     props: {
-      type: String
+      type: String,
+  
     },
   
     data(){
@@ -32,10 +33,6 @@ export default {
 
 <template>
   <div class="container">
-
-    <div>
-      <Swiper />
-    </div>
 
     <div>
         <h2>{{ title }}</h2>
