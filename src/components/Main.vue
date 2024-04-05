@@ -1,11 +1,13 @@
 <script>
+// import { Swiper } from 'swiper/vue';
 import {store} from '../data/store';
 import Card from './partials/Card.vue';
+import Swiper from './partials/Swiper.vue';
 
 export default {
     components: {
       Card
-     
+         
     },
 
     props: {
@@ -15,6 +17,7 @@ export default {
     data(){
       return {
         store,
+        
       }
     },
 
@@ -29,10 +32,17 @@ export default {
 
 <template>
   <div class="container">
+
+    <div>
+      <Swiper />
+    </div>
+
     <div>
         <h2>{{ title }}</h2>
     </div>
     <div class="row row-cols-5 ">
+
+
      
       <Card v-for="element in store[type]" 
       :key="element.id"
