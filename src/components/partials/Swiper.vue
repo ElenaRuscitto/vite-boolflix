@@ -1,6 +1,6 @@
 <script>
-import {store} from '../data/store';
-import Card from './partials/Card.vue';
+import {store} from '../../data/store';
+import Card from './Card.vue';
   // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -10,7 +10,7 @@ import Card from './partials/Card.vue';
   import 'swiper/css/free-mode';
   import 'swiper/css/pagination';
 
-  import './style.css';
+  // import './style.css';
 
   // import required modules
   import { FreeMode, Pagination } from 'swiper/modules';
@@ -66,8 +66,7 @@ export default {
 
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/general' as *;
-@use '../assets/scss/partials/variables' as *;
+
 
 #app {
   height: 100%;
@@ -109,3 +108,4 @@ body {
   height: 100%;
   object-fit: cover;
 }
+</style>
