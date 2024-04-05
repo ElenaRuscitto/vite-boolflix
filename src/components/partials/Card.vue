@@ -32,10 +32,10 @@
 
 
   <section>
-    <div class="col">
+    <div class="col my-col my-2">
         <div class="flip-card  py-2 ">
           <div class="flip-card-inner">
-            <div class="flip-card-front">
+            <div class="flip-card-front ">
 
               <!-- immagine di copertina -->
               <img  
@@ -92,7 +92,7 @@
               <!-- /voto - stelline -->
 
               <!-- trama -->
-              <p><strong>Trama: </strong>{{ cardObject.overview }}</p>
+              <p class="trama"><strong>Trama: </strong>{{ cardObject.overview }}</p>
             </div>
           </div>
         </div>
